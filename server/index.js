@@ -13,15 +13,15 @@ app.use(express.json());
 app.use(cors());
 
 // get entries
-// app.get('/entries', (req, res) => {
-//  queries.getEntry(req.query.name, (err, entry) => {
-//    if (err) {
-//      res.status(404).send(err);
-//    } else {
-//      res.status(200).send(entry);
-//    }
-//  })
-// });
+app.get('/entries', (req, res) => {
+ queries.getEntry(req.query.name, (err, entry) =>{
+   if (err) {
+     res.status(404).send(err);
+   } else {
+     res.status(200).send(entry);
+   }
+ })
+});
 
 // set port where server will listen
 const port = 3000;
