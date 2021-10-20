@@ -1,6 +1,13 @@
 {
   "name": "datastructures",
   "packageManager": "yarn@3.0.2",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server/index.js --watch",
+    "build": "webpack --mode development",
+    "react-dev": "webpack --mode development -w",
+    "react-prod": "webpack --mode production -w"
+  },
   "dependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
