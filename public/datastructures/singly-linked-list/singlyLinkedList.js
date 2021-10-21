@@ -31,14 +31,26 @@ class LinkedList {
 
   unshift(value) { /* prepend */
     const newNode = new Node(value);
-
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
   }
 
-  pop(value) { /* remove last */
-
+  pop() { /* remove last */
+    if (!this.head) {
+      return null;
+    }
+    let removed = this.tail;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = removed.prev;
+      this.tail.next = null;
+      removed.prev = null;
+    }
+    this.length--;
+    return removed;
   }
 
   insert(value, index) { /* insert at */
@@ -58,5 +70,6 @@ let newList = new LinkedList();
 newList.push(3);
 newList.push(6);
 newList.unshift(2);
+newList.pop()
 
 console.log(`Linked list: ${newList}`);
