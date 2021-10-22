@@ -91,7 +91,7 @@ class LinkedList {
     this.length++;
   }
 
-  lookup(index) { /* value at */
+  get(index) { /* value at */
     if (index < 0 || index >= this.length) return null;
     const current = this.head;
     let counter = 0;
@@ -102,12 +102,20 @@ class LinkedList {
     return current;
   }
 
+  set(index, value) { /* alter value at */
+    const targetNode = this.get(index);
+    if (targetNode) {
+      targetNode.value = value;
+      return true;
+    }
+    return false;
+  }
+
   remove(index) {
   }
 
   reverse() {
   }
-}
 
 let newList = new LinkedList();
 newList.push(3);
