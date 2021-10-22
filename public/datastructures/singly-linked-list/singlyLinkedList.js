@@ -65,30 +65,17 @@ class LinkedList {
     this.length++;
   }
 
-  getPriorNextNodes(index) {
-    let count = 0;
-    let priorNode = this.head;
-    let nextNode = priorNode.next;
-    while (count < index - 1) {
-      priorNode = priorNode.next;
-      nextNode = priorNode.next;
-      count++;
-    }
-    return {
-      priorNode,
-      nextNode
-    }
-  }
-
   insert(value, index) { /* insert at */
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
     const newNode = new Node(value);
-    if (index >= this.length) {
-      this.push(value);
-    }
-    const { priorNode, nextNode } = this.getPriorNextNodes(index);
+    const priorNode = this.get(index - 1);
+    var temp = priorNode.next;
     priorNode.next = newNode;
-    newNode.next = nextNode;
+    newNode.next = temp;
     this.length++;
+    return true;
   }
 
   get(index) { /* value at */
@@ -116,8 +103,9 @@ class LinkedList {
 
   reverse() {
   }
+}
 
-let newList = new LinkedList();
+const newList = new LinkedList();
 newList.push(3);
 newList.push(6);
 newList.unshift(2);
