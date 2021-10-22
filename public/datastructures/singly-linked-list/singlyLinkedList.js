@@ -29,6 +29,17 @@ class LinkedList {
     this.length++;
   }
 
+  shift() {
+    if (!this.head) return undefined;
+    var currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
+
   unshift(value) { /* prepend */
     const newNode = new Node(value);
     newNode.next = this.head;
