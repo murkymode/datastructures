@@ -37,23 +37,47 @@ class LinkedList {
   }
 
   pop() { /* remove last */
-    if (!this.head) {
-      return null;
+    if (!this.head) return undefined;
+    var current = this.head;
+    var newTail = current;
+    while (current.next) {
+      newTail = current;
+      current = current.next;
     }
-    let removed = this.tail;
-    if (this.length === 1) {
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+    if (this.length === 0) {
       this.head = null;
       this.tail = null;
-    } else {
-      this.tail = removed.prev;
-      this.tail.next = null;
-      removed.prev = null;
     }
-    this.length--;
-    return removed;
+    return current;
+  }
+
+  getPriorNextNodes(index) {
+    let count = 0;
+    let priorNode = this.head;
+    let nextNode = priorNode.next;
+    while (count < index - 1) {
+      priorNode = priorNode.next;
+      nextNode = priorNode.next;
+      count++;
+    }
+    return {
+      priorNode,
+      nextNode
+    }
   }
 
   insert(value, index) { /* insert at */
+    const newNode = new Node(value);
+    if (index >= this.length) {
+      this.push(value);
+    }
+    const { priorNode, nextNode } = this.getPriorNextNodes(index);
+    priorNode.next = newNode;
+    newNode.next = nextNode;
+    this.length++;
   }
 
   lookup(index) { /* value at */
@@ -70,6 +94,7 @@ let newList = new LinkedList();
 newList.push(3);
 newList.push(6);
 newList.unshift(2);
-newList.pop()
+newList.pop();
+newList.insert(5, 1);
 
 console.log(`Linked list: ${newList}`);
