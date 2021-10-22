@@ -17,7 +17,7 @@ class LinkedList {
     this.length = 0;
   }
 
-  push(value) { /* append */
+  push(value) { /* new tail */
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -29,25 +29,7 @@ class LinkedList {
     this.length++;
   }
 
-  shift() {
-    if (!this.head) return undefined;
-    var currentHead = this.head;
-    this.head = currentHead.next;
-    this.length--;
-    if (this.length === 0) {
-      this.tail = null;
-    }
-    return currentHead;
-  }
-
-  unshift(value) { /* prepend */
-    const newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length++;
-  }
-
-  pop() { /* remove last */
+  pop() { /* remove tail */
     if (!this.head) return undefined;
     var current = this.head;
     var newTail = current;
@@ -63,6 +45,24 @@ class LinkedList {
       this.tail = null;
     }
     return current;
+  }
+
+  shift() { /* remove head */
+    if (!this.head) return undefined;
+    var currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
+    return currentHead;
+  }
+
+  unshift(value) { /* new head */
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
   }
 
   getPriorNextNodes(index) {
@@ -92,6 +92,14 @@ class LinkedList {
   }
 
   lookup(index) { /* value at */
+    if (index < 0 || index >= this.length) return null;
+    const current = this.head;
+    let counter = 0;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
   }
 
   remove(index) {
