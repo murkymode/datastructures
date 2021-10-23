@@ -10,14 +10,14 @@ class Node {
   }
 }
 
-class LinkedList {
+class singlyLinkedList {
   constructor() {
     this.head = null;
     this.tail = this.head;
     this.length = 0;
   }
 
-  push(value) { /* append */
+  push(value) { /* new tail */
     const newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
@@ -29,14 +29,7 @@ class LinkedList {
     this.length++;
   }
 
-  unshift(value) { /* prepend */
-    const newNode = new Node(value);
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length++;
-  }
-
-  pop() { /* remove last */
+  pop() { /* remove tail */
     if (!this.head) return undefined;
     var current = this.head;
     var newTail = current;
@@ -54,47 +47,91 @@ class LinkedList {
     return current;
   }
 
-  getPriorNextNodes(index) {
-    let count = 0;
-    let priorNode = this.head;
-    let nextNode = priorNode.next;
-    while (count < index - 1) {
-      priorNode = priorNode.next;
-      nextNode = priorNode.next;
-      count++;
+  shift() { /* remove head */
+    if (!this.head) return undefined;
+    var currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    if (this.length === 0) {
+      this.tail = null;
     }
-    return {
-      priorNode,
-      nextNode
-    }
+    return currentHead;
   }
 
-  insert(value, index) { /* insert at */
+  unshift(value) { /* new head */
     const newNode = new Node(value);
-    if (index >= this.length) {
-      this.push(value);
-    }
-    const { priorNode, nextNode } = this.getPriorNextNodes(index);
-    priorNode.next = newNode;
-    newNode.next = nextNode;
+    newNode.next = this.head;
+    this.head = newNode;
     this.length++;
   }
 
-  lookup(index) { /* value at */
+  insert(value, index) { /* insert at */
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
+    const newNode = new Node(value);
+    const priorNode = this.get(index - 1);
+    var temp = priorNode.next;
+    priorNode.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
+  }
+
+  get(index) { /* value at */
+    if (index < 0 || index >= this.length) return null;
+    const current = this.head;
+    let counter = 0;
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
+
+  set(index, value) { /* alter value at */
+    const targetNode = this.get(index);
+    if (targetNode) {
+      targetNode.value = value;
+      return true;
+    }
+    return false;
   }
 
   remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    const priorNode = this.get(index - 1);
+    const removed = priorNode.next;
+    priorNode.next = removed.next;
+    this.length--;
+    return removed;
   }
 
   reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (var i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
-let newList = new LinkedList();
+const newList = new singlyLinkedList();
 newList.push(3);
 newList.push(6);
 newList.unshift(2);
 newList.pop();
 newList.insert(5, 1);
+newList.remove(1);
+newList.reverse();
 
 console.log(`Linked list: ${newList}`);
