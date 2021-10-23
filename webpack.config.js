@@ -9,7 +9,7 @@ module.exports = {
     // output will be stored in dist dir
     path: path.resolve(__dirname, 'dist'),
     // naming bundled file
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -20,8 +20,8 @@ module.exports = {
         exclude: /node_modules/,
         // use the babel loader for transpiling code
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         // pure CSS (i.e. w/o CSS modules)
@@ -29,6 +29,6 @@ module.exports = {
         exclude: /\.module\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
-    ]
+    ],
   },
 };
