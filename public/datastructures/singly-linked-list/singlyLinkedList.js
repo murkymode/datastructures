@@ -10,7 +10,7 @@ class Node {
   }
 }
 
-class LinkedList {
+class singlyLinkedList {
   constructor() {
     this.head = null;
     this.tail = this.head;
@@ -99,17 +99,39 @@ class LinkedList {
   }
 
   remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    const priorNode = this.get(index - 1);
+    const removed = priorNode.next;
+    priorNode.next = removed.next;
+    this.length--;
+    return removed;
   }
 
   reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    let next;
+    let prev = null;
+    for (var i = 0; i < this.length; i++) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
   }
 }
 
-const newList = new LinkedList();
+const newList = new singlyLinkedList();
 newList.push(3);
 newList.push(6);
 newList.unshift(2);
 newList.pop();
 newList.insert(5, 1);
+newList.remove(1);
+newList.reverse();
 
 console.log(`Linked list: ${newList}`);
