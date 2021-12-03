@@ -57,6 +57,9 @@ describe('Singly Linked List', () => {
   test('has empty list method', () => {
     expect(typeof testList.empty).toBe('function');
     testList.empty();
+    expect(testList.head).toBe(null);
+    const testValue = testList.get(2);
+    expect(testValue).toBe(null);
   });
 
   test('has reverse list method', () => {
