@@ -10,14 +10,16 @@ describe('Singly Linked List', () => {
 
   test('has working add to tail method', () => {
     expect(typeof testList.push).toBe('function');
+    testList.push(2);
     testList.push(3);
     expect(testList.tail.value).toBe(3);
   });
 
   test('has working remove tail method', () => {
     expect(typeof testList.pop).toBe('function');
+    testList.push(4);
     testList.pop();
-    expect(testList.head).toBe(null);
+    expect(testList.tail.value).toBe(3);
   });
 
   test('has working remove head method', () => {
@@ -28,7 +30,7 @@ describe('Singly Linked List', () => {
     expect(testList.head.value).toBe(3);
   });
 
-  test('has create new head method', () => {
+  test('has working create new head method', () => {
     expect(typeof testList.unshift).toBe('function');
   });
 
@@ -46,5 +48,9 @@ describe('Singly Linked List', () => {
 
   test('has reverse list method', () => {
     expect(typeof testList.reverse).toBe('function');
+  });
+
+  test('has empty list method', () => {
+    expect(typeof testList.empty).toBe('function');
   });
 });

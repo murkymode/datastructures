@@ -134,6 +134,9 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  empty() {
+  }
 }
 
 module.exports = { SinglyLinkedList };
