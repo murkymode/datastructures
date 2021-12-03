@@ -35,4 +35,8 @@ describe('Singly Linked List', () => {
   test('has remove node method', () => {
     expect(typeof testList.remove).toBe('function');
   });
+
+  test('has reverse list method', () => {
+    expect(typeof testList.reverse).toBe('function');
+  });
 });
