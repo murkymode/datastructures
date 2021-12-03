@@ -27,4 +27,8 @@ describe('Singly Linked List', () => {
   test('has retrieve value at target method', () => {
     expect(typeof testList.get).toBe('function');
   });
+
+  test('has alter value at target method', () => {
+    expect(typeof testList.set).toBe('function');
+  });
 });
