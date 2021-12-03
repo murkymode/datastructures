@@ -11,7 +11,7 @@ describe('Singly Linked List', () => {
   test('has working add to tail method', () => {
     expect(typeof testList.push).toBe('function');
     testList.push(3);
-    expect(testList.tail).toBe(3);
+    expect(testList.tail.value).toBe(3);
   });
 
   test('has working remove tail method', () => {
@@ -22,10 +22,10 @@ describe('Singly Linked List', () => {
 
   test('has working remove head method', () => {
     expect(typeof testList.shift).toBe('function');
-    // testList.push(2);
-    // testList.push(3);
-    // testList.shift();
-    // expect(testList.head).toBe(3);
+    testList.push(2);
+    testList.push(3);
+    testList.shift();
+    expect(testList.head.value).toBe(3);
   });
 
   test('has create new head method', () => {
