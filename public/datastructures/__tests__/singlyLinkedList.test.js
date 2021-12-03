@@ -54,11 +54,12 @@ describe('Singly Linked List', () => {
     expect(testList.tail.value).toBe(4);
   });
 
-  test('has reverse list method', () => {
-    expect(typeof testList.reverse).toBe('function');
-  });
-
   test('has empty list method', () => {
     expect(typeof testList.empty).toBe('function');
+    testList.empty();
+  });
+
+  test('has reverse list method', () => {
+    expect(typeof testList.reverse).toBe('function');
   });
 });

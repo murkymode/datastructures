@@ -118,6 +118,9 @@ class SinglyLinkedList {
     return removed;
   }
 
+  empty() {
+  }
+
   reverse() {
     let node = this.head;
     this.head = this.tail;
@@ -133,9 +136,6 @@ class SinglyLinkedList {
     }
 
     return this;
-  }
-
-  empty() {
   }
 }
 
