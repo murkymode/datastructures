@@ -42,22 +42,36 @@ describe('Singly Linked List', () => {
     expect(targetNode.value).toBe(3);
   });
 
-  test('has alter value at target method', () => {
+  test('has working alter value at target method', () => {
     expect(typeof testList.set).toBe('function');
-    testList.set(0, 1);
-    expect(testList.head.value).toBe(1);
+    testList.set(0, 0);
+    expect(testList.head.value).toBe(0);
   });
 
-  test('has remove node method', () => {
+  test('has working remove node method', () => {
     expect(typeof testList.remove).toBe('function');
-
+    testList.remove(3);
+    expect(testList.tail.value).toBe(4);
   });
 
-  test('has reverse list method', () => {
-    expect(typeof testList.reverse).toBe('function');
-  });
-
-  test('has empty list method', () => {
+  test('has working empty list method', () => {
     expect(typeof testList.empty).toBe('function');
+    testList.empty();
+    expect(testList.head).toBe(null);
+    const testValue = testList.get(2);
+    expect(testValue).toBe(null);
+  });
+
+  test('has working reverse list method', () => {
+    expect(typeof testList.reverse).toBe('function');
+    testList.push(1);
+    testList.push(2);
+    testList.push(3);
+    testList.reverse();
+    const reversedList = new SinglyLinkedList();
+    reversedList.push(3);
+    reversedList.push(2);
+    reversedList.push(1);
+    expect(testList).toEqual(reversedList);
   });
 });

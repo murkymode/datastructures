@@ -118,6 +118,12 @@ class SinglyLinkedList {
     return removed;
   }
 
+  empty() {
+    this.head = null;
+    this.tail = this.head;
+    this.length = 0;
+  }
+
   reverse() {
     let node = this.head;
     this.head = this.tail;
@@ -133,9 +139,6 @@ class SinglyLinkedList {
     }
 
     return this;
-  }
-
-  empty() {
   }
 }
 
