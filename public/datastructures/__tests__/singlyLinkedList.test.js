@@ -24,26 +24,33 @@ describe('Singly Linked List', () => {
 
   test('has working remove head method', () => {
     expect(typeof testList.shift).toBe('function');
-    testList.push(2);
-    testList.push(3);
+    testList.push(4);
+    testList.push(5);
     testList.shift();
     expect(testList.head.value).toBe(3);
   });
 
   test('has working create new head method', () => {
     expect(typeof testList.unshift).toBe('function');
+    testList.unshift(1);
+    expect(testList.head.value).toBe(1);
   });
 
-  test('has retrieve value at target method', () => {
+  test('has working retrieve value at target method', () => {
     expect(typeof testList.get).toBe('function');
+    const targetNode = testList.get(1);
+    expect(targetNode.value).toBe(3);
   });
 
   test('has alter value at target method', () => {
     expect(typeof testList.set).toBe('function');
+    testList.set(0, 1);
+    expect(testList.head.value).toBe(1);
   });
 
   test('has remove node method', () => {
     expect(typeof testList.remove).toBe('function');
+
   });
 
   test('has reverse list method', () => {
