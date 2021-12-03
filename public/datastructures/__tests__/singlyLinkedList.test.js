@@ -16,6 +16,8 @@ describe('Singly Linked List', () => {
 
   test('has remove tail method', () => {
     expect(typeof testList.pop).toBe('function');
+    testList.pop();
+    expect(testList.head).toBe(null);
   });
 
   test('has remove head method', () => {
