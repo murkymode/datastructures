@@ -42,15 +42,16 @@ describe('Singly Linked List', () => {
     expect(targetNode.value).toBe(3);
   });
 
-  test('has alter value at target method', () => {
+  test('has working alter value at target method', () => {
     expect(typeof testList.set).toBe('function');
-    testList.set(0, 1);
-    expect(testList.head.value).toBe(1);
+    testList.set(0, 0);
+    expect(testList.head.value).toBe(0);
   });
 
-  test('has remove node method', () => {
+  test('has working remove node method', () => {
     expect(typeof testList.remove).toBe('function');
-
+    testList.remove(3);
+    expect(testList.tail.value).toBe(4);
   });
 
   test('has reverse list method', () => {
