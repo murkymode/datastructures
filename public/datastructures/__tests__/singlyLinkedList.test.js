@@ -10,14 +10,16 @@ describe('Singly Linked List', () => {
 
   test('has working add to tail method', () => {
     expect(typeof testList.push).toBe('function');
+    testList.push(2);
     testList.push(3);
     expect(testList.tail.value).toBe(3);
   });
 
   test('has working remove tail method', () => {
     expect(typeof testList.pop).toBe('function');
+    testList.push(4);
     testList.pop();
-    expect(testList.head).toBe(null);
+    expect(testList.tail.value).toBe(3);
   });
 
   test('has working remove head method', () => {
