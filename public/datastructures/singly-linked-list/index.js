@@ -1,4 +1,4 @@
-import Node from './node';
+const { Node } = require('./node');
 
 class SinglyLinkedList {
   constructor() {
@@ -12,7 +12,7 @@ class SinglyLinkedList {
 
     if (!this.head) {
       this.head = newNode;
-      this.tail = newNode;
+      this.tail = newNode.value;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
@@ -136,13 +136,4 @@ class SinglyLinkedList {
   }
 }
 
-const newList = new SinglyLinkedList();
-newList.push(3);
-newList.push(6);
-newList.unshift(2);
-newList.pop();
-newList.insert(5, 1);
-newList.remove(1);
-newList.reverse();
-
-console.log(`Linked list: ${newList}`);
+module.exports = { SinglyLinkedList };
