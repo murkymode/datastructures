@@ -31,4 +31,8 @@ describe('Singly Linked List', () => {
   test('has alter value at target method', () => {
     expect(typeof testList.set).toBe('function');
   });
+
+  test('has remove node method', () => {
+    expect(typeof testList.remove).toBe('function');
+  });
 });
