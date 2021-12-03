@@ -8,8 +8,10 @@ describe('Singly Linked List', () => {
     expect(typeof SinglyLinkedList).toBe('function');
   });
 
-  test('has add to tail method', () => {
+  test('has working add to tail method', () => {
     expect(typeof testList.push).toBe('function');
+    testList.push(3);
+    expect(testList.tail).toBe(3);
   });
 
   test('has remove tail method', () => {
