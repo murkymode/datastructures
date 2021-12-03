@@ -32,6 +32,8 @@ describe('Singly Linked List', () => {
 
   test('has working create new head method', () => {
     expect(typeof testList.unshift).toBe('function');
+    testList.unshift(2);
+    expect(testList.head.value).toBe(2);
   });
 
   test('has retrieve value at target method', () => {
