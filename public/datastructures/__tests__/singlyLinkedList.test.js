@@ -28,7 +28,7 @@ describe('Singly Linked List', () => {
     expect(testList.head.value).toBe(3);
   });
 
-  test('has create new head method', () => {
+  test('has working create new head method', () => {
     expect(typeof testList.unshift).toBe('function');
   });
 
@@ -46,5 +46,9 @@ describe('Singly Linked List', () => {
 
   test('has reverse list method', () => {
     expect(typeof testList.reverse).toBe('function');
+  });
+
+  test('has empty list method', () => {
+    expect(typeof testList.empty).toBe('function');
   });
 });
