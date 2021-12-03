@@ -10,6 +10,7 @@ describe('SLL Node', () => {
     expect(nodeInstance).toBe(true);
   });
 
-  // test('should', () => {
-  // });
+  test('should initialize the value to null', () => {
+    expect(testNode.value).toBe(null);
+  });
 });
