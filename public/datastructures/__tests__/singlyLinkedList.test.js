@@ -11,4 +11,12 @@ describe('Singly Linked List', () => {
   test('has add to tail method', () => {
     expect(typeof testList.push).toBe('function');
   });
+
+  test('has remove from tail method', () => {
+    expect(typeof testList.pop).toBe('function');
+  });
+
+  test('has remove head method', () => {
+    expect(typeof testList.shift).toBe('function');
+  });
 });
