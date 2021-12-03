@@ -36,8 +36,10 @@ describe('Singly Linked List', () => {
     expect(testList.head.value).toBe(2);
   });
 
-  test('has retrieve value at target method', () => {
+  test('has working retrieve value at target method', () => {
     expect(typeof testList.get).toBe('function');
+    const targetNode = testList.get(1);
+    expect(targetNode.value).toBe(3);
   });
 
   test('has alter value at target method', () => {
