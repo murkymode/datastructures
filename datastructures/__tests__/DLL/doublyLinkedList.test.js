@@ -10,8 +10,12 @@ describe('Doubly Linked List', () => {
     expect(isInstance).toBe(true);
   });
 
-  test('should have a push method', () => {
+  test('should working have a push method', () => {
     expect(typeof testList.push).toBe('function');
+    testList.push(2);
+    expect(testList.tail.value).toBe(2);
+    testList.push(3);
+    expect(testList.tail.value).toBe(3);
   });
 
   test('should have a pop method', () => {
