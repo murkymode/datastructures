@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { Node } = require('../singly-linked-list/node');
+const { Node } = require('../../singly-linked-list/node');
 
 const testNode = new Node();
 
