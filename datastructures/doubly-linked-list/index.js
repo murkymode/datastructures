@@ -31,6 +31,9 @@ export default class DoublyLinkedList {
   remove(index) {
   }
 
+  empty() {
+  }
+
   reverse() {
   }
 }
