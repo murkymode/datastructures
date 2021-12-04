@@ -10,7 +10,7 @@ describe('Doubly Linked List', () => {
     expect(isInstance).toBe(true);
   });
 
-  test('should working have a push method', () => {
+  test('should have working push method', () => {
     expect(typeof testList.push).toBe('function');
     testList.push(2);
     expect(testList.tail.value).toBe(2);
@@ -18,13 +18,13 @@ describe('Doubly Linked List', () => {
     expect(testList.tail.value).toBe(3);
   });
 
-  test('should have a pop method', () => {
+  test('should have working pop method', () => {
     expect(typeof testList.pop).toBe('function');
     testList.pop();
     expect(testList.tail.value).toBe(2);
   });
 
-  test('should have a shift method', () => {
+  test('should have working shift method', () => {
     expect(typeof testList.shift).toBe('function');
     testList.push(1);
     testList.push(2);
@@ -32,31 +32,33 @@ describe('Doubly Linked List', () => {
     expect(testList.head.value).toBe(1);
   });
 
-  test('should have a unshift method', () => {
+  test('should have working unshift method', () => {
     expect(typeof testList.unshift).toBe('function');
+    testList.unshift(0);
+    expect(testList.head.value).toBe(0);
   });
 
-  test('should have a insert method', () => {
+  test('should have working insert method', () => {
     expect(typeof testList.insert).toBe('function');
   });
 
-  test('should have a get method', () => {
+  test('should have working get method', () => {
     expect(typeof testList.get).toBe('function');
   });
 
-  test('should have a set method', () => {
+  test('should have working set method', () => {
     expect(typeof testList.set).toBe('function');
   });
 
-  test('should have a remove method', () => {
+  test('should have working remove method', () => {
     expect(typeof testList.remove).toBe('function');
   });
 
-  test('should have a empty method', () => {
+  test('should have working empty method', () => {
     expect(typeof testList.empty).toBe('function');
   });
 
-  test('should have a reverse method', () => {
+  test('should have working reverse method', () => {
     expect(typeof testList.reverse).toBe('function');
   });
 });
