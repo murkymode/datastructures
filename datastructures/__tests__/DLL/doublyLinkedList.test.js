@@ -20,6 +20,8 @@ describe('Doubly Linked List', () => {
 
   test('should have a pop method', () => {
     expect(typeof testList.pop).toBe('function');
+    testList.pop();
+    expect(testList.tail.value).toBe(2);
   });
 
   test('should have a shift method', () => {
