@@ -26,6 +26,9 @@ describe('Doubly Linked List', () => {
 
   test('should have a shift method', () => {
     expect(typeof testList.shift).toBe('function');
+    testList.push(3);
+    testList.shift(1);
+    expect(testList.head.value).toBe(1);
   });
 
   test('should have a unshift method', () => {
