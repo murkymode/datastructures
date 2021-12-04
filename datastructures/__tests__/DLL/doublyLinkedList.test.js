@@ -9,4 +9,44 @@ describe('Doubly Linked List', () => {
     const instance = testList instanceof DoublyLinkedList;
     expect(instance).toBe(true);
   });
+
+  test('should have a push method', () => {
+    expect(typeof testList.push).toBe('function');
+  });
+
+  test('should have a pop method', () => {
+    expect(typeof testList.pop).toBe('function');
+  });
+
+  test('should have a shift method', () => {
+    expect(typeof testList.shift).toBe('function');
+  });
+
+  test('should have a unshift method', () => {
+    expect(typeof testList.unshift).toBe('function');
+  });
+
+  test('should have a insert method', () => {
+    expect(typeof testList.insert).toBe('function');
+  });
+
+  test('should have a get method', () => {
+    expect(typeof testList.get).toBe('function');
+  });
+
+  test('should have a set method', () => {
+    expect(typeof testList.set).toBe('function');
+  });
+
+  test('should have a remove method', () => {
+    expect(typeof testList.remove).toBe('function');
+  });
+
+  test('should have a empty method', () => {
+    expect(typeof testList.empty).toBe('function');
+  });
+
+  test('should have a reverse method', () => {
+    expect(typeof testList.reverse).toBe('function');
+  });
 });
