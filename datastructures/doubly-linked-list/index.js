@@ -1,6 +1,6 @@
 import Node from './node';
 
-export default class DoublyLinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = this.head;
