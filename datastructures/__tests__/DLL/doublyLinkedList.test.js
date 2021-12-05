@@ -47,6 +47,8 @@ describe('Doubly Linked List', () => {
   test('should have working insert method', () => {
     expect(typeof testList.insert).toBe('function');
     testList.insert(2, 1.5);
+    const testValue = testList.get(2);
+    expect(testValue).toBe(1.5);
   });
 
   test('should have working set method', () => {
