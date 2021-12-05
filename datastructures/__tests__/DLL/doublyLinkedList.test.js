@@ -59,6 +59,8 @@ describe('Doubly Linked List', () => {
 
   test('should have working remove method', () => {
     expect(typeof testList.remove).toBe('function');
+    const testValue = testList.remove(2);
+    expect(testValue).toBe(1.5);
   });
 
   test('should have working empty method', () => {
