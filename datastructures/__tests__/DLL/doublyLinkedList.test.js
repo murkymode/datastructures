@@ -65,6 +65,8 @@ describe('Doubly Linked List', () => {
 
   test('should have working empty method', () => {
     expect(typeof testList.empty).toBe('function');
+    testList.empty();
+    expect(testList.head).toBe(null);
   });
 
   test('should have working reverse method', () => {
