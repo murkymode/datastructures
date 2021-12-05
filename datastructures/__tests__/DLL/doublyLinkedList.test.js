@@ -53,6 +53,8 @@ describe('Doubly Linked List', () => {
 
   test('should have working set method', () => {
     expect(typeof testList.set).toBe('function');
+    testList.set(0, 1);
+    expect(testList.head.value).toBe(1);
   });
 
   test('should have working remove method', () => {
