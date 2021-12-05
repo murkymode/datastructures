@@ -1,5 +1,5 @@
 class Node {
-  constructor(value) {
+  constructor(value = null) {
     this.value = value;
     this.prev = null;
     this.next = null;
