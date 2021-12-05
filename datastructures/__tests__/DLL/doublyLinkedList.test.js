@@ -71,5 +71,13 @@ describe('Doubly Linked List', () => {
 
   test('should have working reverse method', () => {
     expect(typeof testList.reverse).toBe('function');
+    const reverseList = new DoublyLinkedList();
+    testList.push(1);
+    testList.push(2);
+    testList.push(3);
+    reverseList.push(3);
+    reverseList.push(2);
+    reverseList.push(1);
+    expect(testList).toEqual(reverseList);
   });
 });
