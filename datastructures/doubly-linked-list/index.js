@@ -43,18 +43,28 @@ class DoublyLinkedList {
 
   shift() {
     // if no head return null
-
+    if (!this.head) return null;
     // capture shifted node
     // create a variable for new head
+    const shiftedNode = this.head;
+    const newHead = shiftedNode.next;
     // if list length is greater than 1
       // new head's prev is null
       // shifted node's next is null
     // otherwise
       // current tail is null
-
+    if (this.head !== this.tail) {
+      newHead.prev = null;
+      shiftedNode.next = null;
+    } else {
+      this.tail = null;
+    }
     // current head is new head
     // decrement the length
     // return the shifted node
+    this.head = newHead;
+    this.length -= 1;
+    return shiftedNode;
   }
 }
 
