@@ -40,6 +40,22 @@ class DoublyLinkedList {
     this.length -= 1;
     return poppedNode;
   }
+
+  shift() {
+    // if no head return null
+
+    // capture shifted node
+    // create a variable for new head
+    // if list length is greater than 1
+      // new head's prev is null
+      // shifted node's next is null
+    // otherwise
+      // current tail is null
+
+    // current head is new head
+    // decrement the length
+    // return the shifted node
+  }
 }
 
 module.exports = { DoublyLinkedList };
