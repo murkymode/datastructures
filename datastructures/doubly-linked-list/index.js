@@ -7,7 +7,7 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
-  push(value) {
+  push(value) { /* add to tail */
     const newNode = new Node(value);
 
     if (!this.head) {
@@ -23,7 +23,7 @@ class DoublyLinkedList {
     return this;
   }
 
-  pop() {
+  pop() { /* remove tail */
     if (!this.head) return null;
 
     const poppedNode = this.tail;
@@ -41,7 +41,7 @@ class DoublyLinkedList {
     return poppedNode;
   }
 
-  shift() {
+  shift() { /* remove head */
     if (!this.head) return null;
 
     const shiftedNode = this.head;
@@ -57,6 +57,10 @@ class DoublyLinkedList {
     this.head = newHead;
     this.length -= 1;
     return shiftedNode;
+  }
+
+  unshift(value) { /* new head */
+
   }
 }
 
