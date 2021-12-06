@@ -8,6 +8,16 @@ class DoublyLinkedList {
   }
 
   push(value) {
+    // create a new node with the given value
+    // if list has no head
+      // current head is new node
+      // current tail is new node
+    // otherwise
+      // current tail's next is new node
+      // new node's prev is current tail
+      // current tail is new node
+    // increment length
+    // return list
   }
 }
 
