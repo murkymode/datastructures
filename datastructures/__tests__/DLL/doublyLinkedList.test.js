@@ -40,15 +40,15 @@ describe('Doubly Linked List', () => {
 
   test('should have working get method', () => {
     expect(typeof testList.get).toBe('function');
-    const testValue = testList.get(1);
-    expect(testValue).toBe(1);
+    const testNode = testList.get(1);
+    expect(testNode.value).toBe(1);
   });
 
   test('should have working insert method', () => {
     expect(typeof testList.insert).toBe('function');
     testList.insert(2, 1.5);
-    const testValue = testList.get(2);
-    expect(testValue).toBe(1.5);
+    const testNode = testList.get(2);
+    expect(testNode.value).toBe(1.5);
   });
 
   test('should have working set method', () => {
@@ -59,8 +59,8 @@ describe('Doubly Linked List', () => {
 
   test('should have working remove method', () => {
     expect(typeof testList.remove).toBe('function');
-    const testValue = testList.remove(2);
-    expect(testValue).toBe(1.5);
+    const testNode = testList.remove(2);
+    expect(testNode.value).toBe(1.5);
   });
 
   test('should have working empty method', () => {
