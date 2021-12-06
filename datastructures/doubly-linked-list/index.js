@@ -22,6 +22,14 @@ class DoublyLinkedList {
     this.length += 1;
     return this;
   }
+
+  pop() {
+    // if no head, return null
+
+    // current tail's prev is new tail
+    // current tail's next is null
+
+  }
 }
 
 module.exports = { DoublyLinkedList };
