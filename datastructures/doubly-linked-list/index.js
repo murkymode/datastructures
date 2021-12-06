@@ -60,7 +60,18 @@ class DoublyLinkedList {
   }
 
   unshift(value) { /* new head */
+    // create a new node with given value
 
+    // if no head
+      // current head is new node
+      // current tail is new node
+    // otherwise
+      // current head's prev is new node
+      // new head's next is current head
+      // current head is new node
+
+    // increment length
+    // return the list
   }
 }
 
