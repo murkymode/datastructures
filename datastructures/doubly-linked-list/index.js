@@ -74,6 +74,20 @@ class DoublyLinkedList {
     this.length -= 1;
     return this;
   }
+
+  getNode(index) {
+    // if index is greater than list length or index is negative
+      // return false
+
+    // create counter for index
+    // create variable for current node
+    // while index is not equal to passed index value
+      // current node is current node's next
+      // increment count
+
+    // return current node when loop closes
+
+  }
 }
 
 module.exports = { DoublyLinkedList };
