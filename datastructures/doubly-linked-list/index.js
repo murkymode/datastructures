@@ -26,9 +26,17 @@ class DoublyLinkedList {
   pop() {
     // if no head, return null
 
-    // current tail's prev is new tail
-    // current tail's next is null
+    // capture popped node
+    // create new tail var
+    // if new tail is not null
+      // remove link to popped node
+      // remove link from popped node
+    // otherwise
+      // current head is null
 
+    // current tail is new tail is all else falls through
+    // decrement length
+    // return popped node
   }
 }
 
