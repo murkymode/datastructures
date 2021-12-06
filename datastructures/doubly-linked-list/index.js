@@ -1,4 +1,4 @@
-import Node from './node';
+const { Node } = require('./node');
 
 class DoublyLinkedList {
   constructor() {
@@ -7,34 +7,7 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
-  push(value) { /* new tail */
-  }
-
-  pop() { /* remove tail */
-  }
-
-  shift() { /* remove head */
-  }
-
-  unshift(value) { /* new head */
-  }
-
-  insert(value, index) { /* insert at */
-  }
-
-  get(index) { /* value at */
-  }
-
-  set(index, value) { /* alter value at */
-  }
-
-  remove(index) {
-  }
-
-  empty() {
-  }
-
-  reverse() {
+  push(value) {
   }
 }
 
