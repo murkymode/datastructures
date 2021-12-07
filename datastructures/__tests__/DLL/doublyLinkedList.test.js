@@ -16,6 +16,7 @@ describe('Doubly Linked List', () => {
     expect(testList.tail.value).toBe(2);
     testList.push(3);
     expect(testList.tail.value).toBe(3);
+    expect(testList.tail.prev.value).toBe(2);
   });
 
   test('should have working pop method', () => {
@@ -39,16 +40,16 @@ describe('Doubly Linked List', () => {
   });
 
   test('should have working get method', () => {
-    expect(typeof testList.get).toBe('function');
-    const testValue = testList.get(1);
-    expect(testValue).toBe(1);
+    expect(typeof testList.getNode).toBe('function');
+    const testNode = testList.getNode(1);
+    expect(testNode.value).toBe(1);
   });
 
   test('should have working insert method', () => {
     expect(typeof testList.insert).toBe('function');
     testList.insert(2, 1.5);
-    const testValue = testList.get(2);
-    expect(testValue).toBe(1.5);
+    const testNode = testList.getNode(2);
+    expect(testNode.value).toBe(1.5);
   });
 
   test('should have working set method', () => {
@@ -59,8 +60,8 @@ describe('Doubly Linked List', () => {
 
   test('should have working remove method', () => {
     expect(typeof testList.remove).toBe('function');
-    const testValue = testList.remove(2);
-    expect(testValue).toBe(1.5);
+    const testNode = testList.remove(2);
+    expect(testNode.value).toBe(1.5);
   });
 
   test('should have working empty method', () => {
