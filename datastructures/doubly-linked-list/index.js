@@ -13,6 +13,7 @@ class DoublyLinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
+      this.length += 1;
       return this;
     }
     this.tail.next = newNode;
