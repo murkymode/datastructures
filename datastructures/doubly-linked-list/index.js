@@ -7,17 +7,17 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
-  push(value) { /* add to tail */
+  push(value) { /* new tail */
     const newNode = new Node(value);
 
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      newNode.prev = this.tail;
-      this.tail = newNode;
+      return this;
     }
+    this.tail.next = newNode;
+    newNode.prev = this.tail;
+    this.tail = newNode;
 
     this.length += 1;
     return this;
@@ -78,15 +78,20 @@ class DoublyLinkedList {
   getNode(index) {
     // if index is greater than list length or index is negative
       // return false
-
+    if (index >= this.length || index < 0) return false;
     // create counter for index
     // create variable for current node
     // while index is not equal to passed index value
       // current node is current node's next
       // increment count
-
+    let currentIndex = 0;
+    let currentNode = this.head;
+    while (currentIndex !== index) {
+      currentNode = currentNode.next;
+      currentIndex += 1;
+    }
     // return current node when loop closes
-
+    return currentNode;
   }
 }
 
