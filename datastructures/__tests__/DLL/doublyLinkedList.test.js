@@ -16,6 +16,7 @@ describe('Doubly Linked List', () => {
     expect(testList.tail.value).toBe(2);
     testList.push(3);
     expect(testList.tail.value).toBe(3);
+    expect(testList.tail.prev).toBe(2);
   });
 
   test('should have working pop method', () => {
