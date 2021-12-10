@@ -25,28 +25,26 @@ class DoublyLinkedList {
   }
 
   pop() { /* remove tail */
-    if (!this.head) return null;
+    if (this.length === 0) return null;
 
-    const poppedNode = this.tail;
-    const newTail = poppedNode.prev;
-
-    if (newTail) {
-      newTail.next = null;
-      poppedNode.prev = null;
-    } else {
+    const removed = this.tail;
+    if (this.length === 1) {
       this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = removed.prev;
+      this.tail.next = null;
+      removed.prev = null;
     }
-
-    this.tail = newTail;
     this.length -= 1;
-    return poppedNode;
+    return removed;
   }
 
   shift() { /* remove head */
     if (!this.head) return null;
 
     const shiftedNode = this.head;
-    const newHead = shiftedNode.next;
+    const newHead = this.head.next;
 
     if (this.head !== this.tail) {
       newHead.prev = null;
@@ -79,7 +77,7 @@ class DoublyLinkedList {
   getNode(index) {
     // if index is greater than list length or index is negative
       // return false
-    if (index >= this.length || index < 0) return false;
+    // if (index >= this.length || index < 0) return null;
     // create counter for index
     // create variable for current node
     // while index is not equal to passed index value
@@ -95,5 +93,11 @@ class DoublyLinkedList {
     return currentNode;
   }
 }
+
+// const testList = new DoublyLinkedList();
+// testList.push(2);
+// testList.push(3);
+// testList.push(4);
+// const testNode = testList.getNode(1);
 
 module.exports = { DoublyLinkedList };

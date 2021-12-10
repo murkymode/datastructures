@@ -23,6 +23,7 @@ describe('Doubly Linked List', () => {
     expect(typeof testList.pop).toBe('function');
     testList.pop();
     expect(testList.tail.value).toBe(2);
+    console.log(`after pop: ${testList.value}`);
   });
 
   test('should have working shift method', () => {
@@ -42,6 +43,7 @@ describe('Doubly Linked List', () => {
   test('should have working get method', () => {
     expect(typeof testList.getNode).toBe('function');
     const testNode = testList.getNode(1);
+    // console.log(testList);
     expect(testNode.value).toBe(1);
   });
 
