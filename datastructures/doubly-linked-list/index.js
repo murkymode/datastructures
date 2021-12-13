@@ -94,10 +94,4 @@ class DoublyLinkedList {
   }
 }
 
-// const testList = new DoublyLinkedList();
-// testList.push(2);
-// testList.push(3);
-// testList.push(4);
-// const testNode = testList.getNode(1);
-
 module.exports = { DoublyLinkedList };
