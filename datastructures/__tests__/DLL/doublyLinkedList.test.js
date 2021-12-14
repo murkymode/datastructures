@@ -43,7 +43,6 @@ describe('Doubly Linked List', () => {
   test('should have working get method', () => {
     expect(typeof testList.getNode).toBe('function');
     const testNode = testList.getNode(1);
-    // console.log(testList);
     expect(testNode.value).toBe(1);
   });
 
