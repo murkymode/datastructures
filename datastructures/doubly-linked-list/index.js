@@ -87,6 +87,10 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
+
+  }
+
+  set(index, value) {
     const targetNode = this.getNode(index);
     targetNode.value = value;
     return targetNode;
