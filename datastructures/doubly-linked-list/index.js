@@ -65,12 +65,12 @@ class DoublyLinkedList {
       this.head = newHead;
       this.tail = this.head;
     } else {
-      this.head.prev = newHead;
       newHead.next = this.head;
+      this.head.prev = newHead;
       this.head = newHead;
     }
 
-    this.length -= 1;
+    this.length += 1;
     return this;
   }
 
@@ -92,8 +92,7 @@ class DoublyLinkedList {
 
     // if index is 0, unshift
     // if index is equal to length, push
-
-    if (index > this.length || index < 0) {
+    if (index >= this.length || index < 0) {
       return null;
     }
 
@@ -107,12 +106,19 @@ class DoublyLinkedList {
     // get target node at given index
     // new node's previous is target node's previous
     // target node's previous is new node
+    // increment the length
 
     const newNode = new Node(value);
     const targetNode = this.getNode(index);
-    newNode.prev = targetNode.prev;
+    const prevNode = targetNode.prev;
+
+    prevNode.next = newNode;
+    newNode.prev = prevNode;
     targetNode.prev = newNode;
+    newNode.next = targetNode;
+
     this.length += 1;
+    return this;
   }
 
   set(index, value) {
@@ -121,5 +127,11 @@ class DoublyLinkedList {
     return targetNode;
   }
 }
+
+const testList = new DoublyLinkedList();
+testList.push(0);
+testList.push(1);
+testList.push(2);
+testList.insert(2, 1.5);
 
 module.exports = { DoublyLinkedList };
