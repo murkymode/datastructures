@@ -25,7 +25,7 @@ class DoublyLinkedList {
   }
 
   pop() { /* remove tail */
-    if (this.length === 0) return null;
+    if (!this.head) return null;
 
     const removed = this.tail;
     if (this.length === 1) {
@@ -75,21 +75,14 @@ class DoublyLinkedList {
   }
 
   getNode(index) {
-    // if index is greater than list length or index is negative
-      // return false
-    // if (index >= this.length || index < 0) return null;
-    // create counter for index
-    // create variable for current node
-    // while index is not equal to passed index value
-      // current node is current node's next
-      // increment count
     let currentIndex = 0;
     let currentNode = this.head;
+
     while (currentIndex !== index) {
       currentNode = currentNode.next;
       currentIndex += 1;
     }
-    // return current node when loop closes
+
     return currentNode;
   }
 }
