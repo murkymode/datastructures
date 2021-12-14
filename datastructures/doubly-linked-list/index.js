@@ -25,7 +25,7 @@ class DoublyLinkedList {
   }
 
   pop() { /* remove tail */
-    if (this.length === 0) return null;
+    if (!this.head) return null;
 
     const removed = this.tail;
     if (this.length === 1) {
