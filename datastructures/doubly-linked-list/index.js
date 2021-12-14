@@ -87,10 +87,32 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
+    // if index is greater than length, or less than zero
+    // return null
+
+    // if index is 0, unshift
+    // if index is equal to length, push
+
+    if (index > this.length || index < 0) {
+      return null;
+    }
+
+    if (index === 0) {
+      this.unshift(new Node(value));
+    } else if (index === this.length) {
+      this.push(new Node(value));
+    }
+
     // create a new node from the recieved value
     // get target node at given index
     // new node's previous is target node's previous
     // target node's previous is new node
+
+    const newNode = new Node(value);
+    const targetNode = this.getNode(index);
+    newNode.prev = targetNode.prev;
+    targetNode.prev = newNode;
+    this.length += 1;
   }
 
   set(index, value) {
