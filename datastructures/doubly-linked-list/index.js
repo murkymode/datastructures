@@ -87,7 +87,10 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
-
+    // create a new node from the recieved value
+    // get target node at given index
+    // new node's previous is target node's previous
+    // target node's previous is new node
   }
 
   set(index, value) {
