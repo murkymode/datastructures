@@ -87,11 +87,6 @@ class DoublyLinkedList {
   }
 
   insert(index, value) {
-    // if index is greater than length, or less than zero
-    // return null
-
-    // if index is 0, unshift
-    // if index is equal to length, push
     if (index >= this.length || index < 0) {
       return null;
     }
@@ -101,12 +96,6 @@ class DoublyLinkedList {
     } else if (index === this.length) {
       this.push(new Node(value));
     }
-
-    // create a new node from the recieved value
-    // get target node at given index
-    // new node's previous is target node's previous
-    // target node's previous is new node
-    // increment the length
 
     const newNode = new Node(value);
     const targetNode = this.getNode(index);
@@ -122,6 +111,10 @@ class DoublyLinkedList {
   }
 
   set(index, value) {
+    if (index >= this.length || index < 0) {
+      return null;
+    }
+
     const targetNode = this.getNode(index);
     targetNode.value = value;
     return targetNode;
