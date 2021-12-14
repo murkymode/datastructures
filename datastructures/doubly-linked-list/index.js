@@ -85,6 +85,12 @@ class DoublyLinkedList {
 
     return currentNode;
   }
+
+  insert(index, value) {
+    const targetNode = this.getNode(index);
+    targetNode.value = value;
+    return targetNode;
+  }
 }
 
 module.exports = { DoublyLinkedList };
