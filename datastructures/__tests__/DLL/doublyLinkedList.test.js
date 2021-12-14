@@ -23,7 +23,6 @@ describe('Doubly Linked List', () => {
     expect(typeof testList.pop).toBe('function');
     testList.pop();
     expect(testList.tail.value).toBe(2);
-    console.log(`after pop: ${testList.value}`);
   });
 
   test('should have working shift method', () => {
