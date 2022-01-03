@@ -121,10 +121,4 @@ class DoublyLinkedList {
   }
 }
 
-const testList = new DoublyLinkedList();
-testList.push(0);
-testList.push(1);
-testList.push(2);
-testList.insert(2, 1.5);
-
 module.exports = { DoublyLinkedList };
