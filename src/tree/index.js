@@ -9,3 +9,5 @@ class Tree {
   contains(target) {
   }
 }
+
+module.exports = { Tree };
