@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { SinglyLinkedList } = require('../../singly-linked-list');
+const { SinglyLinkedList } = require('../../singly_linked_list');
 
 const testList = new SinglyLinkedList();
 
