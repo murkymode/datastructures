@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { Node } = require('../../doubly-linked-list/node');
+const { Node } = require('../../doubly_linked_list/node');
 
 const testNode = new Node();
 

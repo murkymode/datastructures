@@ -24,4 +24,16 @@ describe('Doubly Linked List', () => {
 
   xtest('', () => {
   });
+
+  xtest('', () => {
+  });
+
+  xtest('', () => {
+  });
+
+  xtest('', () => {
+  });
+
+  xtest('', () => {
+  });
 });
