@@ -16,7 +16,7 @@ describe('Doubly Linked List', () => {
     expect(testTree.children.length).toBe(0);
   });
 
-  test('should be able to add child node', () => {
+  xtest('should be able to add child node', () => {
     const testNode = new Node(7);
     testTree.addChild(testNode);
     expect(testTree.children[0].value).toBe(7);
