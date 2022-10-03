@@ -5,9 +5,11 @@ class Tree {
   }
 
   addChild(value) {
+    /* add node to the tree */
   }
 
   contains(target) {
+    /* BF traversal */
   }
 }
 
