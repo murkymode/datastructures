@@ -1,5 +1,5 @@
 class Node {
-  constructor(root = null) {
+  constructor(root) {
     this.root = root;
     this.children = [];
   }
