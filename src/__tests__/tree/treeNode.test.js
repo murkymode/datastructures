@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const { Node } = require('../../tree/node');
 
-const testNode = new Node();
+const testNode = new Node(3);
 
 describe('Tree Node', () => {
   test('should be a constructor function', () => {
@@ -10,7 +10,7 @@ describe('Tree Node', () => {
     expect(isInstance).toBe(true);
   });
 
-  test('should initialize all values at null', () => {
-    expect(testNode.root).toBe(null);
+  test('should initialize with value as root', () => {
+    expect(testNode.root).toBe(3);
   });
 });
