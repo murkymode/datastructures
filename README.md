@@ -1,7 +1,6 @@
-# Datastructures – Testing & Construction
-## 👋 Hey, welcome to my in progress datastructures repo!
-- This is a TDD build
-#
+## 👋 Hi, welcome to my datastructures repo!
+
+### 🚧 Work in progress 🚧
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
