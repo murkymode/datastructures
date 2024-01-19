@@ -7,13 +7,22 @@ class Tree {
   }
 
   addChild(value) {
-    /* add node to the tree */
     const childNode = new Node(value);
     this.children.push(childNode);
   }
 
   contains(target) {
-    /* BF traversal */
+    let containsTarget = false;
+    const search = function (target) {
+      if (this.value === target) {
+        containsTarget = true;
+      }
+      for (let node of this.children) {
+        search.call(node, target);
+      }
+    };
+    search.call(this, target);
+    return containsTarget;
   }
 }
 
