@@ -13,17 +13,17 @@ class Tree {
   }
 
   contains(target) {
-    let found = false;
+    let containsTarget = false;
     const search = function (target) {
       if (this.value === target) {
-        found = true;
+        containsTarget = true;
       }
       for (let node of this.children) {
         search.call(node, target);
       }
     };
     search.call(this, target);
-    return found;
+    return containsTarget;
   }
 }
 
