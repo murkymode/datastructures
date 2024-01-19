@@ -13,7 +13,17 @@ class Tree {
   }
 
   contains(target) {
-    /* BF traversal */
+    let found = false;
+    const search = function (target) {
+      if (this.value === target) {
+        found = true;
+      }
+      for (let node of this.children) {
+        search.call(node, target);
+      }
+    };
+    search.call(this, target);
+    return found;
   }
 }
 
