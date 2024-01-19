@@ -7,7 +7,6 @@ class Tree {
   }
 
   addChild(value) {
-    /* add node to the tree */
     const childNode = new Node(value);
     this.children.push(childNode);
   }
