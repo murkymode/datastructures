@@ -12,7 +12,7 @@ class Stack {
 
   pop() {
     this.index--;
-    var deleted = this.storage[this.index];
+    const deleted = this.storage[this.index];
     delete this.storage[this.index];
     return deleted;
   }
