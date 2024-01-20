@@ -3,8 +3,10 @@ const { Queue } = require('../../stacks_queues/queue');
 
 const testQueue = new Queue();
 
-describe('Singly Linked List', () => {
+describe('Queue', () => {
   test('should be a function', () => {
-    expect(typeof testQueue).toBe('function');
+    expect(typeof Queue).toBe('function');
+    const isInstance = testQueue instanceof Queue;
+    expect(isInstance).toBe(true);
   });
 });
