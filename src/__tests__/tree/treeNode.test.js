@@ -11,6 +11,6 @@ describe('Tree Node', () => {
   });
 
   test('should initialize with value as root', () => {
-    expect(testNode.root).toBe(3);
+    expect(testNode.value).toBe(3);
   });
 });
