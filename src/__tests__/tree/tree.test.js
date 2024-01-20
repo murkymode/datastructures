@@ -18,7 +18,7 @@ describe('Tree', () => {
   test('should be able to add child node', () => {
     const testValue = 7;
     testTree.addChild(testValue);
-    expect(testTree.children[0].root).toBe(7);
+    expect(testTree.children[0].value).toBe(7);
   });
 
   xtest('', () => {
