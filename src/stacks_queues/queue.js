@@ -22,3 +22,5 @@ class Queue {
     return size > 0 ? size : 0;
   }
 }
+
+module.exports = { Queue };
