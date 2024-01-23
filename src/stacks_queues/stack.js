@@ -1,5 +1,4 @@
 class Stack {
-
   constructor() {
     this.storage = {};
     this.index = 0;
@@ -21,3 +20,5 @@ class Stack {
     return this.index > 0 ? this.index : 0;
   }
 }
+
+module.exports = { Stack };

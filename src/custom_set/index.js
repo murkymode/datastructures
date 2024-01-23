@@ -25,11 +25,4 @@ class CustomSet {
   }
 }
 
-const newSet = new CustomSet();
-newSet.add(1);
-newSet.add(1);
-newSet.add(3);
-console.log(newSet.exists(1));
-console.log(newSet.exists(2));
-newSet.remove(3);
-console.log(newSet);
+module.exports = { CustomSet };

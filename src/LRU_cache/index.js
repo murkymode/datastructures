@@ -47,3 +47,5 @@ class LRUcache {
     this.map.set(key, value);
   }
 }
+
+module.exports = { LRUcache };
