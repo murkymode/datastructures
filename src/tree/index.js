@@ -24,6 +24,18 @@ class Tree {
     search.call(this, target);
     return containsTarget;
   }
+
+  traverse(callback) {
+    callback(this.value);
+    if (!this.children) {
+      return;
+    }
+    for (let node of this.children) {
+      console.log(this.value);
+      const child = this.children[node];
+      child.traverse(callback);
+    }
+  }
 }
 
 module.exports = { Tree };
