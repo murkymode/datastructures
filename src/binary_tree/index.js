@@ -5,4 +5,3 @@ class BinaryTree {
     this.right = [];
   }
 };
-´
